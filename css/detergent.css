@@ -1,0 +1,180 @@
+html,body{
+margin:0;
+padding:0;
+height:100%;
+background:#eef3f9;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+}
+
+#lab{
+position:relative;
+width:100vw;
+height:100vh;
+}
+
+/* ---------- GENERAL ---------- */
+#lab img{
+position:absolute;
+transition:all 1.2s cubic-bezier(.25,.8,.25,1);
+}
+
+#bg{width:100%;height:100%;object-fit:cover;}
+
+#instruction{
+position:absolute;
+top:10px;
+width:100%;
+text-align:center;
+font-size:1.3em;
+font-weight:bold;
+color:#114b5f;
+z-index:20;
+}
+
+/* ---------- STAND ---------- */
+#stand{width:195px;bottom:115px;left:46.5%;z-index:2;}
+#stand-front{width:195px;bottom:168px;left:46%;z-index:6;}
+
+/* ---------- TEST TUBES ---------- */
+#tube1,#tube2{
+width:25px;
+bottom:125px;
+z-index:3;
+filter:drop-shadow(0 6px 6px rgba(0,0,0,0.3));
+}
+#tube1{left:47.3%;}
+#tube2{left:49.2%;}
+
+#tubefilled1,#tubefilled2,
+#resultA,#resultB{
+width:18%;
+bottom:65px;
+display:none;
+z-index:4;
+}
+#tubefilled1,#resultA{left:39%;}
+#tubefilled2,#resultB{left:41%;}
+
+/* ---------- MILK ---------- */
+#milk1{width:250px;top:65%;left:5%;}
+#milk2{width:250px;top:55%;left:15%;}
+
+/* ---------- METHYLENE BLUE ---------- */
+#meth{
+width:90px;
+bottom:80px;
+left:28%;
+z-index:5;
+}
+
+/* CAP BEHIND BOTTLE */
+#meth-cap{
+width:49px;
+bottom:150px;
+left:29.3%;
+cursor:pointer;
+z-index:4; /* LOWER than bottle */
+}
+
+/* ---------- CHLOROFORM ---------- */
+#chloro{
+width:180px;
+bottom:10px;
+left:30%;
+z-index:5;
+}
+#chloro-cap{
+width:54px;
+bottom:130px;
+left:34.1%;
+cursor:pointer;
+z-index:9;
+}
+
+/* ---------- CENTRIFUGE ---------- */
+#centrifuge{
+width:240px;
+bottom:30px;
+right:3%;
+display:none;
+cursor:pointer;
+z-index:7;
+}
+
+/* ---------- PIPETTE ---------- */
+#pippete{
+top:65%;
+left:58%;
+width:250px;
+transform:rotate(-90deg);
+cursor:pointer;
+z-index:8;
+}
+
+/* ---------- LIQUID FLOW ---------- */
+#drop{
+position:absolute;
+width:6px;
+height:0;
+background:linear-gradient(to bottom,#fff,#dfefff);
+left:46.2%;
+top:60%;
+transform:translateX(-50%);
+border-radius:50px;
+display:none;
+z-index:9;
+}
+@keyframes liquidFlow{
+0%{height:0;opacity:0}
+30%{height:80px;opacity:1}
+80%{height:110px}
+100%{height:20px;opacity:0}
+}
+
+
+/* ---------- VORTEX ---------- */
+.vortex{animation:vortexMix .3s ease-in-out infinite;}
+
+@keyframes vortexMix{
+0%{transform:rotate(0) translateX(0)}
+50%{transform:rotate(2deg) translateX(4px)}
+100%{transform:rotate(-2deg) translateX(-4px)}
+}
+
+/* ---------- CENTRIFUGE ---------- */
+.centrifuge-spin{
+animation:spinFast .12s linear infinite,
+vibrate .08s infinite;
+}
+
+@keyframes spinFast{
+from{transform:rotate(0);}
+to{transform:rotate(360deg);}
+}
+
+@keyframes vibrate{
+0%{transform:translateX(0)}
+50%{transform:translateX(2px)}
+100%{transform:translateX(0)}
+}
+
+/* ---------- BUTTONS ---------- */
+button{
+position:absolute;
+top:20px;
+right:20px;
+padding:10px 20px;
+background:#114b5f;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+z-index:20;
+}
+
+#reset-btn{
+right:140px;
+background:#bb2d3b;
+display:none;
+}
